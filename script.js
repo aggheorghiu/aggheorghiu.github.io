@@ -44,17 +44,41 @@ document.querySelectorAll('.navbar a').forEach(anchor => {
 
 // label carousel
 const labels = [
-  "Micro-dictionarr de corporateza",
-  "bla bla bla bla x1"
+  "Micro-dictionar de corporateza",
+  "Te-ai pierdut printre JOI, QBR si ASAP? \nAm fost si noi acolo. Am creat acest mini ghid ca sa iti fie mai usor sa navighezi prin limbajul corporatist fara sa intrebi colegii din jur de 10 ori pe zi."
 ]
 
 let currentIndex = 0;
 const labelElement = document.getElementById("heroLabel");
 
 function updateLabel() {
-  labelElement.textContent = labels[currentIndex];
-  currentIndex = (currentIndex + 1) % labels.length;
+  labelElement.style.opacity = 0;
+
+  setTimeout(() => {
+    labelElement.textContent = labels[currentIndex];
+    currentIndex = (currentIndex + 1) % labels.length;
+
+    labelElement.style.opacity = 1;
+  }, 500);
 }
 
 updateLabel();
 setInterval(updateLabel, 5000);
+
+// Auto-arrange
+function sortDictionarySections() {
+  document.querySelectorAll(".letter-section").forEach(section => {
+    const terms = Array.from(section.querySelectorAll("div:not(h2)"));
+
+    terms.sort((a,b) => {
+      const aText = a.querySelector("strong")?.textContent?.trim() || '';
+      const bText = b.querySelector("strong")?.textContent?.trim() || '';
+      return aText.localeCompare(bText);
+    });
+
+    terms.forEach(term => section.removeChild(term));
+    terms.forEach(term => section.appendChild(term));
+  });
+}
+
+window.addEventListener("DOMContentLoaded", sortDictionarySections);
