@@ -45,7 +45,7 @@ document.querySelectorAll('.navbar a').forEach(anchor => {
 // label carousel
 const labels = [
   "Micro-dictionar de corporateza",
-  "Te-ai pierdut printre JOI, QBR si ASAP? \nAm fost si noi acolo. Am creat acest mini ghid ca sa iti fie mai usor sa navighezi prin limbajul corporatist fara sa intrebi colegii din jur de 10 ori pe zi."
+  "Te simti pierdut printre abrevieri corporatiste de tipul CPL, CFT, BBK, EOD, etc? Te intelegem perfect! Am fost si noi acolo, de aceea am creat acest mini ghit ca sa iti fie mai usor sa navighezi prin limbajul corporatist fara sa intrebi colegii din jur de 10 ori pe zi."
 ]
 
 let currentIndex = 0;
