@@ -52,6 +52,20 @@ body {
   color: #e60000;
 }
 
+.search-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+#searchInput {
+  width: 90%;
+  max-width: 500px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
 .dictionary {
   max-width: 900px;
   margin: 40px auto;
@@ -59,6 +73,10 @@ body {
 }
 
 .dictionary div {
+  text-transform: lowercase;
+}
+
+.dictionary div strong {
   text-transform: capitalize;
 }
 
@@ -74,6 +92,7 @@ body {
   border-left: 5px solid #0077b6;
   padding-left: 10px;
   margin-bottom: 15px;
+  text-transform: uppercase;
 }
 
 .letter-section div {
