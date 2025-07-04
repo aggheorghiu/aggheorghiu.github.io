@@ -44,7 +44,7 @@ backToTopBtn.addEventListener("click", () => {
 
 // label carousel
 const labels = [
-  "Micro-dictionar de corporateza",
+  "Mini-dictionar de corporateza",
   "Te simti pierdut printre abrevieri corporatiste de tipul CPL, CFT, BBK, EOD, etc? Te intelegem perfect! Am fost si noi acolo, de aceea am creat acest mini ghit ca sa iti fie mai usor sa navighezi prin limbajul corporatist fara sa intrebi colegii din jur de 10 ori pe zi.",
 ];
 
@@ -63,7 +63,7 @@ function updateLabel() {
 }
 
 updateLabel();
-setInterval(updateLabel, 5000);
+setInterval(updateLabel, 15000);
 
 //  Auto-arrange
 function sortDictionarySections() {
