@@ -45,7 +45,7 @@ backToTopBtn.addEventListener("click", () => {
 // label carousel
 const labels = [
   "Mini-dictionar de corporateza",
-  "Te simti pierdut printre abrevieri corporatiste de tipul CPL, CFT, BBK, EOD, etc? Te intelegem perfect! Am fost si noi acolo, de aceea am creat acest mini ghit ca sa iti fie mai usor sa navighezi prin limbajul corporatist fara sa intrebi colegii din jur de 10 ori pe zi.",
+  "Te simti pierdut printre abrevieri corporatiste de tipul CPL, CFT, BBK, EOD, etc? Te intelegem perfect! Am fost si noi acolo, de aceea am creat acest mini ghid ca sa iti fie mai usor sa navighezi prin limbajul corporatist fara sa intrebi colegii din jur de 10 ori pe zi.",
 ];
 
 let currentIndex = 0;
