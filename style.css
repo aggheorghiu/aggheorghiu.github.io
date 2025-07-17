@@ -72,10 +72,6 @@ body {
   padding: 0 20px;
 }
 
-/* .dictionary div {
-  text-transform: lowercase;
-} */
-
 .dictionary div strong {
   text-transform: capitalize;
 }
@@ -123,6 +119,10 @@ body {
 
 #backToTop:hover {
   background-color: #cc0000;
+}
+
+a {
+  text-decoration: none;
 }
 
 .footer {
