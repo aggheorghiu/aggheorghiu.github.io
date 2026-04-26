@@ -1,7 +1,32 @@
+// label carousel
+const labels = [
+  `
+  De aici poți începe drumul tău în domeniul sancțiunilor financiare.
+  Aplicarea regulilor fără înțelegerea contextului istoric, politic și socio-cultural ar fi incompletă.
+  Îți oferim punctul de plecare pentru a înțelege lumea din spatele sancțiunilor.
+  `,
+];
+
+let currentIndex = 0;
+const labelElement = document.getElementById("heroLabel");
+
+function updateLabel() {
+  labelElement.style.opacity = 0;
+
+  setTimeout(() => {
+    labelElement.textContent = labels[currentIndex];
+    currentIndex = (currentIndex + 1) % labels.length;
+
+    labelElement.style.opacity = 1;
+  }, 500);
+}
+
+updateLabel();
+setInterval(updateLabel, 15000);
+
 // =====================
 // DATA
 // =====================
-
 const filme = [
   {
     type: "movie",
@@ -136,7 +161,6 @@ Frica și foamea țin și astăzi în viață cea mai cumplită societate din is
     `,
   },
 ];
-
 
 const banking = [
   {
@@ -316,7 +340,6 @@ Iranian Regime: Frauds, Manipulations, Atrocities, Human Rights Violations, Thre
 // =====================
 // RENDER FUNCTION
 // =====================
-
 function renderCarousel(items, trackId) {
   const track = document.getElementById(trackId);
 
@@ -339,7 +362,6 @@ function renderCarousel(items, trackId) {
 // =====================
 // INIT
 // =====================
-
 renderCarousel(filme, "filme-track");
 renderCarousel(banking, "banking-track");
 renderCarousel(economie, "economie-track");
@@ -347,7 +369,6 @@ renderCarousel(economie, "economie-track");
 // =====================
 // CAROUSEL 
 // =====================
-
 document.querySelectorAll(".carousel-wrapper").forEach((carousel) => {
   const track = carousel.querySelector(".carousel-track");
   const prevBtn = carousel.querySelector(".prev");
@@ -393,13 +414,11 @@ document.querySelectorAll(".carousel-wrapper").forEach((carousel) => {
 // =====================
 // MODAL
 // =====================
-
 const modalOverlay = document.getElementById("modalOverlay");
 const modalClose = document.getElementById("modalClose");
-
 const modalImage = document.getElementById("modalImage");
 const modalTitle = document.getElementById("modalTitle");
-const modalMeta = document.getElementById("modalMeta");
+// const modalMeta = document.getElementById("modalMeta");
 const modalExtra = document.getElementById("modalExtra");
 const modalDescription = document.getElementById("modalDescription");
 const modalTrailer = document.getElementById("modalTrailer");
@@ -407,7 +426,7 @@ const modalTrailer = document.getElementById("modalTrailer");
 function openModal(item) {
   modalImage.src = item.cover;
   modalTitle.textContent = item.title;
-  modalMeta.textContent = `${item.year} • ${item.rating}`;
+  // modalMeta.textContent = `${item.year} • ${item.rating}`;
   modalDescription.textContent = item.description;
 
   // RESET extra field
@@ -432,20 +451,16 @@ function openModal(item) {
   } else {
     modalTrailer.style.display = "none";
   }
-
   modalOverlay.classList.add("active");
 }
 
 function closeModal() {
   modalOverlay.classList.remove("active");
 }
-
 modalClose.addEventListener("click", closeModal);
-
 modalOverlay.addEventListener("click", (e) => {
   if (e.target === modalOverlay) closeModal();
 });
-
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeModal();
 });

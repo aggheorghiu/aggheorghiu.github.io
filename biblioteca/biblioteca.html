@@ -12,6 +12,8 @@
       rel="stylesheet"
     />
   </head>
+
+  <!-- Navbar -->
   <body>
     <nav class="navbar">
       <div class="nav-logo">UC</div>
@@ -21,49 +23,46 @@
         <a href="/biblioteca/biblioteca.html">Bibliotecă</a>
       </div>
     </nav>
+    
+    <!-- Banner -->
+    <div class="hero">
+      <div class="hero-label" id="heroLabel"></div>
+    </div>
 
+    <!-- Carusele 1, 2, 3 -->
     <div class="carousels-container">
       <!-- Carousel 1 -->
       <div class="carousel-wrapper filme">
-        <h2>Filme</h2>
-
+        <h2>Movies</h2>
         <div class="carousel-row">
           <button class="nav prev">‹</button>
-
           <div class="carousel-viewport">
             <div class="carousel-track" id="filme-track"></div>
           </div>
-
           <button class="nav next">›</button>
         </div>
       </div>
 
       <!-- Carousel 2 -->
       <div class="carousel-wrapper banking">
-        <h2>Cărți</h2>
-
+        <h2>Books</h2>
         <div class="carousel-row">
           <button class="nav prev">‹</button>
-
           <div class="carousel-viewport">
             <div class="carousel-track" id="banking-track"></div>
           </div>
-
           <button class="nav next">›</button>
         </div>
       </div>
 
       <!-- Carousel 3 -->
       <div class="carousel-wrapper economie">
-        <h2>Articole</h2>
-
+        <h2>Articles</h2>
         <div class="carousel-row">
           <button class="nav prev">‹</button>
-
           <div class="carousel-viewport">
             <div class="carousel-track" id="economie-track"></div>
           </div>
-
           <button class="nav next">›</button>
         </div>
       </div>
@@ -75,12 +74,10 @@
 
         <div class="modal-content">
           <img id="modalImage" alt="" />
-
           <div class="modal-info">
             <h3 id="modalTitle"></h3>
             <p class="modal-extra" id="modalExtra"></p>
             <p class="modal-meta" id="modalMeta"></p>
-            
             <p class="modal-description" id="modalDescription"></p>
             <a id="modalTrailer" class="modal-trailer" target="_blank">Link</a>
           </div>
