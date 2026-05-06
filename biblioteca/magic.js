@@ -2,9 +2,9 @@
 const labels = [
   `
   De aici poți începe drumul tău în domeniul sancțiunilor financiare.
-  Aplicarea regulilor fără înțelegerea contextului istoric, politic și socio-cultural ar fi incompletă.
-  Îți oferim punctul de plecare pentru a înțelege lumea din spatele sancțiunilor.
   `,
+  "Aplicarea regulilor fără înțelegerea contextului istoric, politic și socio-cultural ar fi incompletă.",
+  "Îți oferim punctul de plecare pentru a înțelege lumea din spatele sancțiunilor."
 ];
 
 let currentIndex = 0;
@@ -22,7 +22,8 @@ function updateLabel() {
 }
 
 updateLabel();
-setInterval(updateLabel, 15000);
+setInterval(updateLabel, 10000);
+
 
 // =====================
 // DATA
