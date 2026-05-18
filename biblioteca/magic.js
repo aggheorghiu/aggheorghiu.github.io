@@ -4,7 +4,7 @@ const labels = [
   De aici poți începe drumul tău în domeniul sancțiunilor financiare.
   `,
   "Aplicarea regulilor fără înțelegerea contextului istoric, politic și socio-cultural ar fi incompletă.",
-  "Îți oferim punctul de plecare pentru a înțelege lumea din spatele sancțiunilor."
+  "Îți oferim punctul de plecare pentru a înțelege lumea din spatele sancțiunilor.",
 ];
 
 let currentIndex = 0;
@@ -24,7 +24,6 @@ function updateLabel() {
 updateLabel();
 setInterval(updateLabel, 10000);
 
-
 // =====================
 // DATA
 // =====================
@@ -38,6 +37,7 @@ const filme = [
     rating: "8.2 IMDb",
     description:
       "Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.",
+    tags: ["#Fraud", "#MoneyLaundering", "#MarketAbuse"],
   },
   {
     type: "movie",
@@ -48,6 +48,7 @@ const filme = [
     rating: "8.1 IMDb",
     description:
       "Stories about corporate corruption, securities fraud and creative accounting. Film-documentary based on real stories.",
+    tags: ["#Corrupton", "#Fraud", "#FinancialCrime", "MoneyLaundering"],
   },
   {
     type: "movie",
@@ -58,6 +59,7 @@ const filme = [
     rating: "8.2 IMDb",
     description:
       "Takes a closer look at what brought about the 2008 financial meltdown.",
+    tags: ["#FinancialCrisis", "#MarketAbuse", "#Compliance"],
   },
   {
     type: "movie",
@@ -68,6 +70,13 @@ const filme = [
     rating: "8.0 IMDb",
     description:
       "Analyzes the concept of the corporation throughout recent history up to its present-day dominance.",
+    tags: [
+      "#Corporations",
+      "#Corporate Power",
+      "#Capitalism",
+      "#Business Ethics",
+      "#Globalization",
+    ],
   },
   {
     type: "movie",
@@ -78,6 +87,13 @@ const filme = [
     rating: "8.0 IMDb",
     description:
       "A documentary that follows former U.S. Labor Secretary Robert Reich as he looks to raise awareness of the country's widening economic gap.",
+    tags: [
+      "#Economic Inequality",
+      "#Middle Class",
+      "#Wealth Gap",
+      "#Public Policy",
+      "#Economics",
+    ],
   },
   {
     type: "movie",
@@ -88,6 +104,13 @@ const filme = [
     rating: "7.4 IMDb",
     description:
       "An examination of the social costs of corporate interests pursuing profits at the expense of the public good.",
+    tags: [
+      "#Capitalism",
+      "#Financial Crisis",
+      "#Corporate Greed",
+      "#Banks",
+      "#American Economy",
+    ],
   },
   {
     type: "movie",
@@ -98,6 +121,13 @@ const filme = [
     rating: "7.3 IMDb",
     description:
       "An impatient young stockbroker is willing to do anything to get to the top, including trading on illegal inside information taken through a ruthless, greedy corporate raider who takes the youth under his wing.",
+    tags: [
+      "#Wall Street",
+      "#Insider Trading",
+      "#Greed",
+      "#Stock Market",
+      "#Corporate Finance",
+    ],
   },
   {
     type: "movie",
@@ -108,6 +138,13 @@ const filme = [
     rating: "7.3 IMDb",
     description:
       "The major causes and the consequences of the humankinds greatest economic depression.",
+    tags: [
+      "#Great Depression",
+      "# 1929 Crash",
+      "#Economic History",
+      "#Market Collapse",
+      "#Financial Crisis",
+    ],
   },
   {
     type: "movie",
@@ -118,6 +155,13 @@ const filme = [
     rating: "7.8 IMDb",
     description:
       "In 2006-2007 a group of investors bet against the United States mortgage market. In their research, they discover how flowed and corrupt the market is.",
+    tags: [
+      "# 2008 Crisis",
+      "#Mortgage Crisis",
+      "#Banking",
+      "#Wall Street",
+      "#Financial System",
+    ],
   },
   {
     type: "movie",
@@ -128,6 +172,7 @@ const filme = [
     rating: "N/A",
     description:
       "Afghanistan has changed dramatically since the Taliban returned to power in 2021. The regime is reshaping the country in its image while struggling to deal with mounting crises and the loss of western aid. The ABC's Meghna Bali travels across the country to uncover the reality of life in Afghanistan.",
+    tags: ["#Afghanistan", "#Talibans", "#Terrorism", "#HumanRights"],
   },
   {
     type: "movie",
@@ -138,17 +183,20 @@ const filme = [
     rating: "N/A",
     description:
       "Un reportaj de 20 de minute din Afganistanul condus de talibani. Echipa TVR a fost singura din România care a filmat în țară condusă de fundamentaliști. Un reportaj exclusiv și în premiera pentru România.",
+    tags: ["#Afghanistan", "#Talibans", "#Terrorism", "#HumanRights"],
   },
   {
     type: "movie",
-    title: "Coreea de Nord, nimic de invidiat, un documentar de Adelin Petrișor",
+    title:
+      "Coreea de Nord, nimic de invidiat, un documentar de Adelin Petrișor",
     cast: ["Adelin Petrisor"],
     cover: "covers/coreea_de_nord_adelin.png",
     year: 2013,
     rating: "N/A",
-    description:`
+    description: `
     „O ţară în care absolut tot ce faci este controlat, o ţară în care nu ai voie să te plimbi în capitală, trebuie să ceri aprobare ca să-ţi vizitezi rudele", povesteşte Adelin Petrişor despre experienţa sa în Coreea de Nord.
     `,
+    tags: ["#NordCoreea", "#Sanctions", "#Censorship", "#HumanRights"],
   },
   {
     type: "movie",
@@ -157,9 +205,10 @@ const filme = [
     cover: "covers/coreea_de_nord_zaiafet.png",
     year: 2022,
     rating: "N/A",
-    description:`
+    description: `
 Frica și foamea țin și astăzi în viață cea mai cumplită societate din istoria omenirii, cel mai de nepătruns totalitarism și, cum bine zicea un jurnalist român, pe singurul gras dintr-o țară de slabi. Astăzi vorbim așadar despre Coreea de Nord, dictatura care face să pălească și cele mai negre distopii. Când, am citit, în liceu, romanul lui George Orwell, 1984, mi-am zis că ceva mai rău de-atât nu poate exista. Ei bine, Coreea de Nord se încăpățânează să bată ficțiunea: din 1948, familia conducătoare Kim și-a pus mintea, sufletul și toate meschinăriile condiției umane la contribuție pentru a crea un stat-închisoare în care mai puternice decât conducătorii supremi sunt doar frica și foamea. Este locul în care totul este atât de absurd, încât multe informații care vin din interior par greu de crezut. Și totuși, chiar se întâmplă, și o să vă spun astăzi cum ajunge un popor, prin frică și foame, să trăiască într-un univers aproape paralel și de neimaginat, în care fiecare se descurcă cum poate și, mai ales, supraviețuiește de la o zi la alta.
     `,
+    tags: ["#NordCoreea", "#Sanctions", "#Censorship", "#HumanRights"],
   },
 ];
 
@@ -291,25 +340,27 @@ Despre finanțarea terorismului, cum se obțin bani iliciți din răpirea turiș
   },
 ];
 
-const economie = [
+const articles = [
   {
     type: "book",
-    title: "Iran's USDT and Stablecoin-Based Sanctions Evasion: An Empirical Analysis of Digital Dollar Exploitation for International Trade Finance",
+    title:
+      "Iran's USDT and Stablecoin-Based Sanctions Evasion: An Empirical Analysis of Digital Dollar Exploitation for International Trade Finance",
     author: "Osman Sonmez",
     cover: "covers/irans_usdt.png",
     year: 2025,
-    trailer:"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6362678",
+    trailer: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6362678",
     description: `
 This study examines how Iran exploits USDT and stablecoin technology for sanctions evasion in international trade finance. It documents the mechanisms, estimates the scale, maps the geographic corridors, evaluates issuer compliance responses, and proposes a detection framework.
 `,
   },
   {
     type: "book",
-    title: "Incriminarea nerespectării sancțiunilor internaționale impuse de Uniunea Europeană – sancțiuni derogatorii de la Codul penal pentru persoane juridice",
+    title:
+      "Incriminarea nerespectării sancțiunilor internaționale impuse de Uniunea Europeană – sancțiuni derogatorii de la Codul penal pentru persoane juridice",
     author: "Laura LICĂ-BANU, Cătălin CHIBZUI",
     cover: "covers/juridice_fs.png",
     year: 2026,
-    trailer:"https://www.juridice.ro/813290",
+    trailer: "https://www.juridice.ro/813290",
     description: `
 Consecințele eludării sancțiunilor financiare în România, cu trimitere la Legea nr. 224 din 12 decembrie 2025.
 `,
@@ -320,7 +371,8 @@ Consecințele eludării sancțiunilor financiare în România, cu trimitere la L
     author: "Zhanna Kondzirska, Kirsti-Leigh Styer",
     cover: "covers/lseg.png",
     year: 2025,
-    trailer:"https://www.lseg.com/en/insights/risk-intelligence/international-sanctions-evasion-four-tactics-to-track",
+    trailer:
+      "https://www.lseg.com/en/insights/risk-intelligence/international-sanctions-evasion-four-tactics-to-track",
     description: `
 Câteva tehnici frecvente de eludare a sancțiunilor financiare.
 `,
@@ -331,7 +383,8 @@ Câteva tehnici frecvente de eludare a sancțiunilor financiare.
     author: "Zhanna Kondzirska, Kirsti-Leigh Styer",
     cover: "covers/ifmat.png",
     year: 2026,
-    trailer:"https://www.ifmat.org/iran-foreign-investment-company-ific-report-2/",
+    trailer:
+      "https://www.ifmat.org/iran-foreign-investment-company-ific-report-2/",
     description: `
 Iranian Regime: Frauds, Manipulations, Atrocities, Human Rights Violations, Threats, Crimes, News.
 `,
@@ -347,6 +400,10 @@ function renderCarousel(items, trackId) {
   items.forEach((item) => {
     const card = document.createElement("div");
     card.className = "card";
+
+    // ✅ IMPORTANT FOR SEARCH
+    card.dataset.title = item.title.toLowerCase();
+    card.dataset.tags = (item.tags || []).join(" ").toLowerCase();
 
     card.innerHTML = `
       <img src="${item.cover}" alt="${item.title}">
@@ -365,21 +422,21 @@ function renderCarousel(items, trackId) {
 // =====================
 renderCarousel(filme, "filme-track");
 renderCarousel(banking, "banking-track");
-renderCarousel(economie, "economie-track");
+renderCarousel(articles, "articles-track");
 
 // =====================
-// CAROUSEL 
+// CAROUSEL
 // =====================
 document.querySelectorAll(".carousel-wrapper").forEach((carousel) => {
   const track = carousel.querySelector(".carousel-track");
   const prevBtn = carousel.querySelector(".prev");
   const nextBtn = carousel.querySelector(".next");
 
-  let currentIndex = 0;
+  carousel._index = 0;
   const visibleCards = 5;
 
   function getCards() {
-    return carousel.querySelectorAll(".card");
+    return carousel.querySelectorAll(".card:not(.hidden)");
   }
 
   function updateCarousel() {
@@ -387,30 +444,28 @@ document.querySelectorAll(".carousel-wrapper").forEach((carousel) => {
     if (!cards.length) return;
 
     const cardWidth = cards[0].offsetWidth + 20;
-    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-
+    track.style.transform = `translateX(-${carousel._index * cardWidth}px)`;
     prevBtn.disabled = currentIndex === 0;
     nextBtn.disabled = currentIndex >= cards.length - visibleCards;
   }
 
   nextBtn.addEventListener("click", () => {
     const cards = getCards();
-    if (currentIndex < cards.length - visibleCards) {
-      currentIndex++;
+    if (carousel._index < cards.length - visibleCards) {
+      carousel._index++;
       updateCarousel();
     }
   });
 
   prevBtn.addEventListener("click", () => {
-    if (currentIndex > 0) {
-      currentIndex--;
+    if (carousel._index > 0) {
+      carousel._index--;
       updateCarousel();
     }
   });
 
   requestAnimationFrame(updateCarousel);
 });
-
 
 // =====================
 // MODAL
@@ -422,6 +477,7 @@ const modalTitle = document.getElementById("modalTitle");
 // const modalMeta = document.getElementById("modalMeta");
 const modalExtra = document.getElementById("modalExtra");
 const modalDescription = document.getElementById("modalDescription");
+const modalTags = document.getElementById("modalTags");
 const modalTrailer = document.getElementById("modalTrailer");
 
 function openModal(item) {
@@ -429,18 +485,30 @@ function openModal(item) {
   modalTitle.textContent = item.title;
   // modalMeta.textContent = `${item.year} • ${item.rating}`;
   modalDescription.textContent = item.description;
+  modalTags.innerHTML = "";
+
+  if (item.tags) {
+    item.tags.forEach((tag) => {
+      const tagElement = document.createElement("span");
+
+      tagElement.classList.add("tag");
+      tagElement.textContent = tag;
+
+      modalTags.appendChild(tagElement);
+    });
+  }
 
   // RESET extra field
   modalExtra.textContent = "";
   modalExtra.style.display = "none";
 
-  // BOOK → AUTHOR
+  // BOOK -> AUTHOR
   if (item.author) {
     modalExtra.innerHTML = `<strong>Author:</strong> ${item.author}`;
     modalExtra.style.display = "block";
   }
 
-  // MOVIE → CAST
+  // MOVIE -> CAST
   if (item.cast) {
     modalExtra.innerHTML = `<strong>Cast:</strong> ${item.cast.join(", ")}`;
     modalExtra.style.display = "block";
@@ -465,3 +533,32 @@ modalOverlay.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeModal();
 });
+
+// Search bar
+const searchInput = document.getElementById("searchInput");
+searchInput.addEventListener("input", (e) => {
+  const value = e.target.value.toLowerCase().trim();
+  const allCards = document.querySelectorAll(".card");
+
+  allCards.forEach((card) => {
+    const title = card.dataset.title || "";
+    const tags = card.dataset.tags || "";
+    const match = title.includes(value) || tags.includes(value);
+
+    card.classList.toggle("hidden", value !== "" && !match);
+  });
+
+  resetAllCarousels();
+});
+
+function resetAllCarousels() {
+  document.querySelectorAll(".carousel-wrapper").forEach((carousel) => {
+    const track = carousel.querySelector(".carousel-track");
+
+    // reset scroll position
+    track.style.transform = "translateX(0px)";
+
+    // reset internal index (your logic currently doesn't store it properly)
+    carousel._index = 0;
+  });
+}
