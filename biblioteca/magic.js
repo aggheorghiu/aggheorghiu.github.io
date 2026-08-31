@@ -215,6 +215,18 @@ Frica și foamea țin și astăzi în viață cea mai cumplită societate din is
 const banking = [
   {
     type: "book",
+    title: "Cat timp infloresc lamaii",
+    author: "Zoulfa Katouh",
+    cover: "covers/cat_timp_infloresc_lamaii.jpg",
+    year: 2023,
+    rating: "4.43 Goodreads",
+    description: `
+    Salama Kassab was a pharmacy student when the cries for freedom broke out in Syria. She still had her parents and her big brother; she still had her home. She had a normal teenager’s life.
+    Now Salama volunteers at a hospital in Homs, helping the wounded who flood through the doors daily. Secretly, though, she is desperate to find a way out of her beloved country before her sister-in-law, Layla, gives birth. So desperate, that she has manifested a physical embodiment of her fear in the form of her imagined companion, Khawf, who haunts her every move in an effort to keep her safe.
+       `,
+  },
+  {
+    type: "book",
     title:
       "Ghost Wars: The Secret History of the CIA, Afghanistan, and Bin Laden from the Soviet Invasion to September 10, 2001",
     author: "Steve Coll",
@@ -224,6 +236,18 @@ const banking = [
     description: `
 Povestește despre razboiul civil din Afganistan, creșterea puterii Al Qaeda, încercarea de a-l captura pe Bin Laden.
     `,
+  },
+  {
+    type: "book",
+    title: "Prizonierii geografiei",
+    author: "Tim Marshall",
+    cover: "covers/prizonierii_geografiei.jpeg",
+    year: 2022,
+    rating: "4.18 Goodreads",
+    description: `
+Toți liderii sunt constrânși de geografie. Alegerile lor sunt limitate de munți, râuri, mări și beton. Da, pentru a urmări evenimentele mondiale trebuie să înțelegi oamenii, ideile și mișcările - dar dacă nu știi geografie, nu vei avea niciodată imaginea completă.
+
+Dacă te-ai întrebat vreodată de ce Putin este atât de obsedat de Crimeea, de ce SUA era destinată să devină o superputere globală sau de ce baza de putere a Chinei continuă să se extindă, toate răspunsurile sunt aici.    `,
   },
   {
     type: "book",
