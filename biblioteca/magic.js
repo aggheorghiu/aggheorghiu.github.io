@@ -30,6 +30,17 @@ setInterval(updateLabel, 10000);
 const filme = [
   {
     type: "movie",
+    title: "How Money Actually Works",
+    cast: ["Johnny Harris"],
+    cover: "covers/How_Money_Actually_Works.png",
+    year: 2026,
+    rating: "N/A",
+    description:
+      "Johnny Harris is an Emmy-winning independent journalist and contributor to the New York Times. Based in Washington, DC, Harris reports on interesting trends and stories domestically and around the globe, publishing to his audience of over 5 million on Youtube.  Harris produced and hosted the twice Emmy-nominated series Borders for Vox Media. His visual style blends motion graphics with cinematic videography to create content that explains complex issues in relatable ways.",
+    tags: ["#Money", "#MonetaryPolicy", "#MarketAbuse", "#MoneyLaundering"],
+  },
+  {
+    type: "movie",
     title: "The Wolf of Wall Street",
     cast: ["Leonardo DiCaprio", "Jonah Hill", "Margot Robbie"],
     cover: "covers/the_wolf_of_wall_street.jpg",
@@ -48,7 +59,7 @@ const filme = [
     rating: "8.1 IMDb",
     description:
       "Stories about corporate corruption, securities fraud and creative accounting. Film-documentary based on real stories.",
-    tags: ["#Corrupton", "#Fraud", "#FinancialCrime", "MoneyLaundering"],
+    tags: ["#Corrupton", "#Fraud", "#FinancialCrime", "#MoneyLaundering"],
   },
   {
     type: "movie",
@@ -498,7 +509,7 @@ const modalOverlay = document.getElementById("modalOverlay");
 const modalClose = document.getElementById("modalClose");
 const modalImage = document.getElementById("modalImage");
 const modalTitle = document.getElementById("modalTitle");
-// const modalMeta = document.getElementById("modalMeta");
+const modalMeta = document.getElementById("modalMeta");
 const modalExtra = document.getElementById("modalExtra");
 const modalDescription = document.getElementById("modalDescription");
 const modalTags = document.getElementById("modalTags");
@@ -507,7 +518,7 @@ const modalTrailer = document.getElementById("modalTrailer");
 function openModal(item) {
   modalImage.src = item.cover;
   modalTitle.textContent = item.title;
-  // modalMeta.textContent = `${item.year} • ${item.rating}`;
+  modalMeta.textContent = `${item.year} • ${item.rating}`;
   modalDescription.textContent = item.description;
   modalTags.innerHTML = "";
 
@@ -581,8 +592,6 @@ function resetAllCarousels() {
 
     // reset scroll position
     track.style.transform = "translateX(0px)";
-
-    // reset internal index (your logic currently doesn't store it properly)
     carousel._index = 0;
   });
 }
