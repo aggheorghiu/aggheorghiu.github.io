@@ -464,29 +464,62 @@ renderCarousel(articles, "articles-track");
 // =====================
 document.querySelectorAll(".carousel-wrapper").forEach((carousel) => {
   const track = carousel.querySelector(".carousel-track");
+  const viewport = carousel.querySelector(".carousel-viewport");
   const prevBtn = carousel.querySelector(".prev");
   const nextBtn = carousel.querySelector(".next");
 
   carousel._index = 0;
-  const visibleCards = 5;
 
   function getCards() {
     return carousel.querySelectorAll(".card:not(.hidden)");
   }
 
+  // distance between the left edges of two neighbouring cards (card + CSS gap)
+  function getStep(cards) {
+    if (cards.length > 1) {
+      return (
+        cards[1].getBoundingClientRect().left -
+        cards[0].getBoundingClientRect().left
+      );
+    }
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    return cards[0].getBoundingClientRect().width + gap;
+  }
+
+  // how many cards fit completely at the current screen width
+  function getVisibleCards(cards, step) {
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    const width = viewport.getBoundingClientRect().width;
+    return Math.max(1, Math.floor((width + gap + 1) / step));
+  }
+
+  function getMaxIndex(cards, step) {
+    return Math.max(0, cards.length - getVisibleCards(cards, step));
+  }
+
   function updateCarousel() {
     const cards = getCards();
-    if (!cards.length) return;
+    if (!cards.length) {
+      carousel._index = 0;
+      track.style.transform = "translateX(0px)";
+      prevBtn.disabled = true;
+      nextBtn.disabled = true;
+      return;
+    }
 
-    const cardWidth = cards[0].offsetWidth + 20;
-    track.style.transform = `translateX(-${carousel._index * cardWidth}px)`;
-    prevBtn.disabled = currentIndex === 0;
-    nextBtn.disabled = currentIndex >= cards.length - visibleCards;
+    const step = getStep(cards);
+    const maxIndex = getMaxIndex(cards, step);
+    carousel._index = Math.min(carousel._index, maxIndex);
+
+    track.style.transform = `translateX(-${carousel._index * step}px)`;
+    prevBtn.disabled = carousel._index === 0;
+    nextBtn.disabled = carousel._index >= maxIndex;
   }
 
   nextBtn.addEventListener("click", () => {
     const cards = getCards();
-    if (carousel._index < cards.length - visibleCards) {
+    if (!cards.length) return;
+    if (carousel._index < getMaxIndex(cards, getStep(cards))) {
       carousel._index++;
       updateCarousel();
     }
@@ -499,7 +532,15 @@ document.querySelectorAll(".carousel-wrapper").forEach((carousel) => {
     }
   });
 
+  carousel._update = updateCarousel;
   requestAnimationFrame(updateCarousel);
+});
+
+// screen resized or phone rotated: recompute positions and arrows
+window.addEventListener("resize", () => {
+  document.querySelectorAll(".carousel-wrapper").forEach((carousel) => {
+    if (carousel._update) carousel._update();
+  });
 });
 
 // =====================
@@ -593,5 +634,8 @@ function resetAllCarousels() {
     // reset scroll position
     track.style.transform = "translateX(0px)";
     carousel._index = 0;
+
+    // refresh the arrows for the cards left after the search
+    if (carousel._update) carousel._update();
   });
 }
